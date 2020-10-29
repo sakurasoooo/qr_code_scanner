@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'entryScreen.dart';
 
+
 void main() => runApp(MaterialApp(home: QRViewExample()));
 
 const flashOn = 'FLASH ON';

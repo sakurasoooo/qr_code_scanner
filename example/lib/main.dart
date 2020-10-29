@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'entryScreen.dart';
 import 'scanner.dart';
+import 'dart:io';
 
 void main() => runApp(MaterialApp(home: QRViewExample()));
 
@@ -283,6 +284,7 @@ class _QRViewExampleState extends State<QRViewExample>
     this.controller = controller;
     controller.scannedDataStream.listen((scanData) {
       if (flashState == flashOn) {
+        sleep(const Duration(seconds: 1));
         SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
         Navigator.push(
           context,
