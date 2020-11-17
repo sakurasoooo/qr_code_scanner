@@ -211,50 +211,6 @@ class _QRViewExampleState extends State<QRViewExample>
         ]));
   }
 
-  // void animateScanAnimation(bool reverse) {
-  //   if (reverse) {
-  //     _controller.reverse(from: 1.0);
-  //   } else {
-  //     _controller.forward(from: 1.0);
-  //   }
-  // }
-
-  // Widget enter() {
-  //   return Scaffold(
-  //     appBar: AppBar(
-  //       leading: Icon(Icons.clear, color: Colors.black),
-  //       backgroundColor: Color(0xFFEDEDED),
-  //       elevation: 0,
-  //       actions: [
-  //         IconButton(
-  //           icon: Icon(Icons.more_horiz, color: Colors.black),
-  //           onPressed: null,
-  //         ),
-  //       ],
-  //     ),
-  //     body: Center(
-  //       child: Column(
-  //           mainAxisAlignment: MainAxisAlignment.center,
-  //           crossAxisAlignment: CrossAxisAlignment.center,
-  //           children: [
-  //             SizedBox(
-  //                 child: Container(
-  //               height: 350,
-  //               width: double.infinity,
-  //               color: Color(0xFF24B04D),
-  //               child: Center(
-  //                 child: Text(
-  //                   "进馆成功！",
-  //                   textAlign: TextAlign.center,
-  //                   style: TextStyle(fontSize: 35),
-  //                 ),
-  //               ),
-  //             )),
-  //           ]),
-  //     ),
-  //   );
-  // }
-
   Widget scanner() {
     return Expanded(
       flex: 4,
@@ -271,14 +227,6 @@ class _QRViewExampleState extends State<QRViewExample>
       ),
     );
   }
-
-  // bool _isFlashOn(String current) {
-  //   return flashOn == current;
-  // }
-
-  // bool _isBackCamera(String current) {
-  //   return backCamera == current;
-  // }
 
   void _onQRViewCreated(QRViewController controller) {
     this.controller = controller;

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 class EntryScreen extends StatefulWidget {
   @override
@@ -7,6 +9,9 @@ class EntryScreen extends StatefulWidget {
 }
 
 class _EntryScreenState extends State<EntryScreen> {
+  final textStyle = TextStyle(
+      fontSize: 35, fontFamily: 'SourceHanSansCN', fontWeight: FontWeight.bold);
+
   @override
   Widget build(BuildContext context) {
     return enter();
@@ -42,15 +47,38 @@ class _EntryScreenState extends State<EntryScreen> {
                 width: double.infinity,
                 color: Color(0xFF24B04D),
                 child: Center(
-                  child: Text(
-                    "进馆成功！",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 35),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "进馆成功！",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 34,
+                            fontFamily: 'SourceHanSansCN',
+                            fontWeight: FontWeight.normal),
+                      ),
+                      Text(
+                        addDateValues(),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 34,
+                            fontFamily: 'HuaWenSong',
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
                   ),
                 ),
               )),
             ]),
       ),
     );
+  }
+
+  String addDateValues() {
+    initializeDateFormatting();
+    DateTime now = DateTime.now();
+    return DateFormat('yyyy-MM-dd  HH:mm:ss').format(now);
   }
 }
